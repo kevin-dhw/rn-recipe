@@ -1,9 +1,21 @@
-import { Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import {
+  KeyboardAvoidingView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const SignInScreen = () => {
+  const router = useRouter();
   return (
     <View>
-      <Text>11SignInScreen</Text>
+      <KeyboardAvoidingView>
+        <Text>11SignInScreen</Text>
+        <TouchableOpacity onPress={() => router.push("/(auth)/sign-up")}>
+          跳转
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     </View>
   );
 };
